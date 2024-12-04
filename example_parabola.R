@@ -19,8 +19,7 @@ coordinates(df) <- ~x+y
 
 #* Visualization
 
-p<-spplot(df,colorkey=T,xlab="coordx",ylab="coordy",
-             ylim=c(-0.6,1.6),cex=8,pch="|")
+p<-spplot(df,colorkey=T,xlab="coordx",ylab="coordy",ylim=c(-0.6,1.6),cex=8,pch="|")
 
 p+layer(panel.points(x,y,type="l",lwd=3),data=df)
 
