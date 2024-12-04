@@ -1,4 +1,4 @@
-#* Auxiliary functions
+#* Auxiliary functions and libraries
 
 source("/sim_algorithm.R")
 library("latticeExtra")
