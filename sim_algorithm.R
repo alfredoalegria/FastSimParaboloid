@@ -5,12 +5,12 @@ require("gsl");
 require("expm");
 require("plot3Drgl")
 
-#* Coefficients circular-Matérn Model
+#* Coefficients circular-Matérn model
 
 coef<-function(n,tau,nu){(n^2+tau)^(-nu-0.5)}
 sum_coef<-function(tau,nu){sum(((0:1000)^2+tau)^(-nu-0.5))}
 
-#* Simulation Algorithm Paraboloid
+#* Simulation algorithm paraboloid
 
 sim_paraboloid_3d <- function(N,tau,nu,s,sites){
    
@@ -38,7 +38,7 @@ sim_paraboloid_3d <- function(N,tau,nu,s,sites){
    return(data.frame(sites,component1,component2))
 }
 
-#* Simulation Algorithm Parabola
+#* Simulation algorithm parabola
 
 sim_parabola_2d <- function(N,tau,nu,s,sites){
    
