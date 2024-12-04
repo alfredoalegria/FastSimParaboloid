@@ -1,6 +1,6 @@
 #* Auxiliary functions
 
-source("/Users/alfredo/Desktop/paraboloid/new/final/sim_algorithm.R")
+source("/sim_algorithm.R")
 library("latticeExtra")
 library("sp")
 set.seed(123)
