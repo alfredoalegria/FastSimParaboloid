@@ -8,9 +8,7 @@ set.seed(123)
 #* Locations on the parabola
 
 n1=1000;
-t=seq(-1,1,l=n1)
-
-x=t;
+x=seq(-1,1,l=n1);
 y=x^2;
 sites=cbind(x,y);
 
