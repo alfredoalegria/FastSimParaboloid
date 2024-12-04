@@ -1,9 +1,9 @@
 #* Auxiliary functions
 
-source("/Users/alfredo/Desktop/paraboloid/new/final/sim_algorithm.R")
+source("/sim_algorithm.R")
 set.seed(13)
 
-#* locations on the paraboloid
+#* Locations on the paraboloid
 
 n1=500;
 n2=500;
