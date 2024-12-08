@@ -1,10 +1,6 @@
-#* Auxiliary functions
-
-source("/Users/alfredo/Desktop/paraboloide/new2/sim.R")
-set.seed(123)
-
 #* Locations on the paraboloid
 
+set.seed(123)
 n1=30;
 n2=30;
 ang=seq(0,2*pi,l=n1);
@@ -46,11 +42,11 @@ for(rep in 1:nrep){
 	
         b11=s1*coef(n,tau1,nu1)/sum_coef(tau1,nu1);
         b22=s2*coef(n,tau2,nu2)/sum_coef(tau2,nu2);
-        b12=sqrt(s1*s2)*r12*coef(n,min(tau1,tau2),0.5*(nu1+nu2)) /
-                       sum_coef(min(tau1,tau2),0.5*(nu1+nu2));
+        b12=sqrt(s1*s2)*r12*coef(n,min(tau1,tau2),0.5*(nu1+nu2))/sum_coef(min(tau1,tau2),0.5*(nu1+nu2));
         Bn=cbind(c(b11,b12),c(b12,b22));
         aux=sqrt(2*n+1)*sqrtm(Bn)%*%rnorm(2);
-        w=rnorm(3);  
+        
+	w=rnorm(3);  
         w=w/sqrt(sum(w^2)); 
         dot_prod=psites%*%w;
 
@@ -64,15 +60,15 @@ for(rep in 1:nrep){
 
        aux1 = matrix1[,(trunc[j]+1):(N+1)]
        aux2 = matrix2[,(trunc[j]+1):(N+1)]
-	 error[j] = max((rowSums(aux1))^2+(rowSums(aux2))^2);
+       error[j] = max((rowSums(aux1))^2+(rowSums(aux2))^2);
+	   
    }
 
-   qq[rep,]=error; print(rep)
+   qq[rep,]=error;
 }
 
 log_qq=log(sqrt(colMeans(qq)))
 lm(log_qq~log(trunc))$coefficients[2]
-
 plot(log(trunc),log_qq,xlim=c(3.32,6),ylim=c(-8.5,0.14),type="b")
 
 
